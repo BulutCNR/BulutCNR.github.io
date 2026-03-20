@@ -9,7 +9,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: #0d0d0d;
+    background: #1c1c1c;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -22,7 +22,23 @@
     position: fixed;
     inset: 0;
     z-index: 0;
-    opacity: 0.4;
+    opacity: 0.2;
+  }
+
+  .float-char {
+    position: fixed;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 900;
+    opacity: 0.04;
+    color: #f7f5f0;
+    pointer-events: none;
+    z-index: 1;
+    user-select: none;
+    animation: floatDrift linear infinite alternate;
+  }
+  @keyframes floatDrift {
+    0%   { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-24px) rotate(1deg); }
   }
 
   .container {
@@ -33,51 +49,50 @@
   }
 
   .label {
-    font-size: 10px;
-    letter-spacing: 0.4em;
+    font-size: 9px;
+    letter-spacing: 0.35em;
     color: #FFC719;
-    opacity: 0.7;
-    margin-bottom: 20px;
+    opacity: 0.5;
+    margin-bottom: 14px;
     text-transform: uppercase;
   }
 
   .title {
     font-family: 'Noto Serif SC', serif;
-    font-size: 64px;
+    font-size: 50px;
     font-weight: 900;
-    color: #f7f5f0;
+    color: #ede9e0;
     letter-spacing: 0.06em;
     line-height: 1;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .subtitle {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: #555;
-    margin-bottom: 60px;
+    font-size: 8px;
+    letter-spacing: 0.3em;
+    color: #383838;
+    margin-bottom: 50px;
     text-transform: uppercase;
   }
 
   .cards {
     display: flex;
-    gap: 24px;
+    gap: 28px;
     justify-content: center;
     flex-wrap: wrap;
   }
 
   .card {
-    width: 200px;
+    width: 215px;
     border: 1px solid #2a2a2a;
-    padding: 28px 20px;
+    padding: 30px 22px 22px;
     cursor: pointer;
     text-decoration: none;
     display: block;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.3s, transform 0.3s;
+    transition: border-color 0.3s, transform 0.35s;
   }
-
   .card::before {
     content: '';
     position: absolute;
@@ -85,104 +100,78 @@
     opacity: 0;
     transition: opacity 0.3s;
   }
-
   .card.light { background: #f7f5f0; }
-  .card.light::before { background: rgba(255,199,25,0.08); }
+  .card.light::before { background: rgba(255,199,25,0.05); }
   .card.light .card-mode { color: #111; }
-  .card.light .card-label { color: #888; }
+  .card.light .card-label { color: #bbb; }
   .card.light .card-bar { background: #111; }
   .card.light .card-dot { background: #FFC719; }
 
   .card.dark { background: #111; }
-  .card.dark::before { background: rgba(255,199,25,0.05); }
-  .card.dark .card-mode { color: #f7f5f0; }
-  .card.dark .card-label { color: #444; }
-  .card.dark .card-bar { background: #f7f5f0; }
+  .card.dark::before { background: rgba(255,199,25,0.04); }
+  .card.dark .card-mode { color: #e8e5de; }
+  .card.dark .card-label { color: #383838; }
+  .card.dark .card-bar { background: #e8e5de; }
   .card.dark .card-dot { background: #FFC719; }
 
-  .card:hover { border-color: #FFC719; transform: translateY(-4px); }
+  .card:hover { border-color: rgba(255,199,25,0.45); transform: translateY(-6px); }
   .card:hover::before { opacity: 1; }
 
-  .card-preview {
-    width: 100%;
-    height: 110px;
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(128,128,128,0.15);
-  }
-
-  .card.light .card-preview { background: #f0ede6; }
-  .card.dark  .card-preview { background: #0a0a0a; }
-
-  .preview-char {
-    font-family: 'Noto Serif SC', serif;
-    font-weight: 900;
-    font-size: 80px;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.06;
-    user-select: none;
-  }
-  .card.light .preview-char { color: #111; }
-  .card.dark  .preview-char { color: #fff; }
-
-  .preview-bar {
+  .card-accent {
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 3px;
-    background: #FFC719;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFC719, transparent);
+    opacity: 0.4;
   }
 
-  .preview-lines {
-    position: absolute;
-    bottom: 10px; left: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  .icon-wrap {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 22px;
   }
-  .preview-line {
-    height: 1px;
-    background: rgba(128,128,128,0.25);
+  .icon-wrap svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
   }
+  .card:hover .icon-wrap svg { transform: rotate(6deg) scale(1.05); }
 
   .card-dot {
-    width: 6px; height: 6px;
+    width: 5px; height: 5px;
     border-radius: 50%;
-    margin: 0 auto 12px;
+    margin: 0 auto 9px;
     animation: pdot 2s ease-in-out infinite;
   }
-  @keyframes pdot { 0%,100%{opacity:1} 50%{opacity:0.2} }
+  @keyframes pdot { 0%,100%{opacity:1} 50%{opacity:0.15} }
 
   .card-mode {
-    font-size: 13px;
-    letter-spacing: 0.2em;
+    font-size: 11px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
-
   .card-label {
-    font-size: 9px;
-    letter-spacing: 0.15em;
+    font-size: 8px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
   }
 
   .card-bar {
     position: absolute;
     bottom: 0; left: 0;
-    height: 2px;
+    height: 1px;
     width: 0;
-    transition: width 0.3s;
-    opacity: 0.4;
+    transition: width 0.35s;
+    opacity: 0.2;
   }
   .card:hover .card-bar { width: 100%; }
 
   .footer {
-    margin-top: 56px;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: #333;
+    margin-top: 46px;
+    font-size: 8px;
+    letter-spacing: 0.22em;
+    color: #2c2c2c;
     text-transform: uppercase;
   }
 </style>
@@ -191,21 +180,56 @@
 
 <canvas id="bg"></canvas>
 
+<div class="float-char" style="font-size:300px;top:2%;left:-5%;animation-duration:20s;">龙</div>
+<div class="float-char" style="font-size:200px;bottom:6%;right:-2%;animation-duration:24s;animation-delay:-10s;">鸟</div>
+<div class="float-char" style="font-size:130px;top:38%;right:7%;animation-duration:16s;animation-delay:-5s;">安</div>
+
 <div class="container">
   <div class="label">网络安全服务 · Poster Series</div>
   <div class="title">上网，我们帮助</div>
   <div class="subtitle">Select a version</div>
 
   <div class="cards">
+
+    <!-- LIGHT — bagua / sun graphic -->
     <a class="card light" href="poster_light.html">
-      <div class="card-preview">
-        <div class="preview-char">安</div>
-        <div class="preview-bar"></div>
-        <div class="preview-lines">
-          <div class="preview-line" style="width:60px"></div>
-          <div class="preview-line" style="width:40px"></div>
-          <div class="preview-line" style="width:50px"></div>
-        </div>
+      <div class="card-accent"></div>
+      <div class="icon-wrap">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- outer ring -->
+          <circle cx="60" cy="60" r="50" stroke="#111" stroke-width="1.2" opacity="0.12"/>
+          <!-- middle ring -->
+          <circle cx="60" cy="60" r="36" stroke="#111" stroke-width="1" opacity="0.18"/>
+          <!-- inner circle -->
+          <circle cx="60" cy="60" r="16" stroke="#111" stroke-width="1.2" fill="rgba(255,199,25,0.1)"/>
+          <circle cx="60" cy="60" r="4" fill="#FFC719" opacity="0.9"/>
+
+          <!-- 8 spokes — bagua inspired -->
+          <line x1="60" y1="10" x2="60" y2="24" stroke="#111" stroke-width="1.4"/>
+          <line x1="60" y1="96" x2="60" y2="110" stroke="#111" stroke-width="1.4"/>
+          <line x1="10" y1="60" x2="24" y2="60" stroke="#111" stroke-width="1.4"/>
+          <line x1="96" y1="60" x2="110" y2="60" stroke="#111" stroke-width="1.4"/>
+          <line x1="25" y1="25" x2="35" y2="35" stroke="#111" stroke-width="1.4"/>
+          <line x1="85" y1="85" x2="95" y2="95" stroke="#111" stroke-width="1.4"/>
+          <line x1="95" y1="25" x2="85" y2="35" stroke="#111" stroke-width="1.4"/>
+          <line x1="25" y1="95" x2="35" y2="85" stroke="#111" stroke-width="1.4"/>
+
+          <!-- trigram dashes at 8 positions (bagua style) -->
+          <!-- N -->
+          <line x1="52" y1="13" x2="56" y2="13" stroke="#111" stroke-width="1.5"/>
+          <line x1="58" y1="13" x2="62" y2="13" stroke="#111" stroke-width="1.5"/>
+          <line x1="66" y1="13" x2="68" y2="13" stroke="#111" stroke-width="1.5"/>
+          <!-- S -->
+          <line x1="52" y1="107" x2="56" y2="107" stroke="#111" stroke-width="1.5"/>
+          <line x1="58" y1="107" x2="68" y2="107" stroke="#111" stroke-width="1.5"/>
+          <!-- E -->
+          <line x1="107" y1="56" x2="107" y2="60" stroke="#111" stroke-width="1.5"/>
+          <line x1="107" y1="62" x2="107" y2="66" stroke="#111" stroke-width="1.5"/>
+          <line x1="107" y1="52" x2="107" y2="54" stroke="#111" stroke-width="1.5"/>
+          <!-- W -->
+          <line x1="13" y1="54" x2="13" y2="68" stroke="#111" stroke-width="1.5"/>
+          <line x1="13" y1="52" x2="13" y2="53" stroke="#111" stroke-width="1.5"/>
+        </svg>
       </div>
       <div class="card-dot"></div>
       <div class="card-mode">Light</div>
@@ -213,21 +237,46 @@
       <div class="card-bar"></div>
     </a>
 
+    <!-- DARK — geometric diamond / seal graphic -->
     <a class="card dark" href="poster_dark.html">
-      <div class="card-preview">
-        <div class="preview-char">安</div>
-        <div class="preview-bar"></div>
-        <div class="preview-lines">
-          <div class="preview-line" style="width:60px"></div>
-          <div class="preview-line" style="width:40px"></div>
-          <div class="preview-line" style="width:50px"></div>
-        </div>
+      <div class="card-accent"></div>
+      <div class="icon-wrap">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- outer square rotated 45° -->
+          <rect x="60" y="8" width="73" height="73" rx="2"
+                transform="rotate(45 60 60)"
+                stroke="#e8e5de" stroke-width="1.1" opacity="0.15"/>
+          <!-- mid diamond -->
+          <polygon points="60,18 102,60 60,102 18,60"
+                   stroke="#e8e5de" stroke-width="1.1" fill="none" opacity="0.25"/>
+          <!-- inner diamond -->
+          <polygon points="60,34 86,60 60,86 34,60"
+                   stroke="#e8e5de" stroke-width="1.1" fill="rgba(255,199,25,0.06)"/>
+          <!-- cross -->
+          <line x1="60" y1="18" x2="60" y2="102" stroke="#e8e5de" stroke-width="0.6" opacity="0.15"/>
+          <line x1="18" y1="60" x2="102" y2="60" stroke="#e8e5de" stroke-width="0.6" opacity="0.15"/>
+          <!-- diagonals -->
+          <line x1="28" y1="28" x2="92" y2="92" stroke="#e8e5de" stroke-width="0.5" opacity="0.1"/>
+          <line x1="92" y1="28" x2="28" y2="92" stroke="#e8e5de" stroke-width="0.5" opacity="0.1"/>
+          <!-- center -->
+          <circle cx="60" cy="60" r="8" stroke="#FFC719" stroke-width="1.2" fill="rgba(255,199,25,0.08)"/>
+          <circle cx="60" cy="60" r="3" fill="#FFC719" opacity="0.85"/>
+          <!-- corner dots at diamond points -->
+          <circle cx="60" cy="34" r="2" fill="#e8e5de" opacity="0.4"/>
+          <circle cx="86" cy="60" r="2" fill="#e8e5de" opacity="0.4"/>
+          <circle cx="60" cy="86" r="2" fill="#e8e5de" opacity="0.4"/>
+          <circle cx="34" cy="60" r="2" fill="#e8e5de" opacity="0.4"/>
+          <!-- gold accent arcs -->
+          <path d="M60 52 A8 8 0 0 1 68 60" stroke="#FFC719" stroke-width="1.2" opacity="0.5"/>
+          <path d="M60 68 A8 8 0 0 1 52 60" stroke="#FFC719" stroke-width="1.2" opacity="0.5"/>
+        </svg>
       </div>
       <div class="card-dot"></div>
       <div class="card-mode">Dark</div>
       <div class="card-label">暗色版本</div>
       <div class="card-bar"></div>
     </a>
+
   </div>
 
   <div class="footer">© 2026 · 网络安全 · voor MKB</div>
@@ -239,12 +288,12 @@
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  const nodes = Array.from({length: 30}, () => ({
+  const nodes = Array.from({length: 22}, () => ({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    vx: (Math.random() - 0.5) * 0.3,
-    vy: (Math.random() - 0.5) * 0.3,
-    r: Math.random() * 2 + 1
+    vx: (Math.random() - 0.5) * 0.22,
+    vy: (Math.random() - 0.5) * 0.22,
+    r: Math.random() * 1.4 + 0.7
   }));
 
   function draw() {
@@ -254,9 +303,9 @@
         const dx = nodes[i].x - nodes[j].x;
         const dy = nodes[i].y - nodes[j].y;
         const d = Math.sqrt(dx*dx+dy*dy);
-        if (d < 180) {
+        if (d < 155) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(255,199,25,${0.08*(1-d/180)})`;
+          ctx.strokeStyle = `rgba(255,199,25,${0.07*(1-d/155)})`;
           ctx.lineWidth = 0.5;
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -265,7 +314,7 @@
       }
       ctx.beginPath();
       ctx.arc(nodes[i].x, nodes[i].y, nodes[i].r, 0, Math.PI*2);
-      ctx.fillStyle = 'rgba(255,199,25,0.4)';
+      ctx.fillStyle = 'rgba(255,199,25,0.28)';
       ctx.fill();
       nodes[i].x += nodes[i].vx;
       nodes[i].y += nodes[i].vy;
