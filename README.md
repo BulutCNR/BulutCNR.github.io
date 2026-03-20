@@ -1,7 +1,6 @@
 # 上网，我们帮助 
 
-Een geanimeerde, interactieve cybersecurity-poster gebouwd in puur HTML, CSS en JavaScript. Geen frameworks, geen dependencies.
-
+Een geanimeerde, interactieve cybersecurity-poster gebouwd in puur HTML, CSS en JavaScript. 
 ## Functies
 
 - Live canvas-deeltjesnetwerk met klikgolf-effect
