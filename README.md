@@ -2,8 +2,19 @@
 
 ## Doel
 
-Gemaakt als een cybersecurity dienst model met een website voor het onboarden van klanten waar ze de diensten kunnen zien en kiezen. 
+Dit project begon als een ontwerpoefening voor het vak Chinees, een poster maken voor een fictief cybersecuritybedrijf. Maar ergens in het proces werd het iets meer dan dat.
 
+阴阳 Yin en Yang — twee tegengestelde krachten in balans. In cybersecurity zijn dat aanval en verdediging. De dreigingsmeter op de poster fluctueert nooit naar nul, want balans betekent niet de afwezigheid van gevaar.
+
+Confucianistische integriteit betekent betrouwbaar handelen, ongeacht de situatie. Dat is de kern van elk beveiligingsbeleid:  onzichtbaar maar altijd actief. Net als de scan op de poster die nooit stopt.
+
+Collectivisme leert dat de groep belangrijker is dan het individu. Eén onbeveiligd apparaat raakt iedereen. Veiligheid meer een gedeelde verantwoordelijkheid dan een persoonlijke keuze.
+
+Een netwerk is nooit een verzameling losse onderdelen. Het is een web van verbindingen, afhankelijkheden, kwetsbaarheden. Eén zwak punt raakt het geheel. Bescherming is een begrip van het systeem als geheel.
+
+Dat idee zit in elk onderdeel van dit project: de bewegende nodes op de achtergrond die verbindingen trekken, de dreigingsmeter die voortdurend fluctueert, de scan die nooit stopt. Niet omdat het er cool uitziet, maar omdat het klopt.
+
+上网，我们帮助 — terwijl jij online bent, denken wij mee, voor uw cyberveiligheid.
 
 Een geanimeerde, interactieve cybersecurity-poster gebouwd in puur HTML, CSS en JavaScript. 
 ## Functies
