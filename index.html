@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Noto+Serif+SC:wght@900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
- 
+
   body {
     background: #1c1c1c;
     min-height: 100vh;
@@ -17,14 +17,14 @@
     font-family: 'Share Tech Mono', monospace;
     overflow: hidden;
   }
- 
+
   canvas {
     position: fixed;
     inset: 0;
     z-index: 0;
     opacity: 0.2;
   }
- 
+
   .float-char {
     position: fixed;
     font-family: 'Noto Serif SC', serif;
@@ -40,14 +40,14 @@
     0%   { transform: translateY(0px) rotate(0deg); }
     100% { transform: translateY(-24px) rotate(1deg); }
   }
- 
+
   .container {
     position: relative;
     z-index: 10;
     text-align: center;
     padding: 40px 20px;
   }
- 
+
   .label {
     font-size: 9px;
     letter-spacing: 0.35em;
@@ -56,7 +56,7 @@
     margin-bottom: 14px;
     text-transform: uppercase;
   }
- 
+
   .title {
     font-family: 'Noto Serif SC', serif;
     font-size: 50px;
@@ -66,7 +66,7 @@
     line-height: 1;
     margin-bottom: 6px;
   }
- 
+
   .subtitle {
     font-size: 8px;
     letter-spacing: 0.3em;
@@ -74,14 +74,14 @@
     margin-bottom: 50px;
     text-transform: uppercase;
   }
- 
+
   .cards {
     display: flex;
     gap: 28px;
     justify-content: center;
     flex-wrap: wrap;
   }
- 
+
   .card {
     width: 215px;
     border: 1px solid #2a2a2a;
@@ -106,17 +106,17 @@
   .card.light .card-label { color: #bbb; }
   .card.light .card-bar { background: #111; }
   .card.light .card-dot { background: #FFC719; }
- 
+
   .card.dark { background: #111; }
   .card.dark::before { background: rgba(255,199,25,0.04); }
   .card.dark .card-mode { color: #e8e5de; }
   .card.dark .card-label { color: #383838; }
   .card.dark .card-bar { background: #e8e5de; }
   .card.dark .card-dot { background: #FFC719; }
- 
+
   .card:hover { border-color: rgba(255,199,25,0.45); transform: translateY(-6px); }
   .card:hover::before { opacity: 1; }
- 
+
   .card-accent {
     position: absolute;
     top: 0; left: 0; right: 0;
@@ -124,7 +124,7 @@
     background: linear-gradient(90deg, transparent, #FFC719, transparent);
     opacity: 0.4;
   }
- 
+
   .icon-wrap {
     width: 120px;
     height: 120px;
@@ -136,7 +136,7 @@
     transition: transform 0.5s ease;
   }
   .card:hover .icon-wrap svg { transform: rotate(6deg) scale(1.05); }
- 
+
   .card-dot {
     width: 5px; height: 5px;
     border-radius: 50%;
@@ -144,7 +144,7 @@
     animation: pdot 2s ease-in-out infinite;
   }
   @keyframes pdot { 0%,100%{opacity:1} 50%{opacity:0.15} }
- 
+
   .card-mode {
     font-size: 11px;
     letter-spacing: 0.22em;
@@ -156,7 +156,7 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
   }
- 
+
   .card-bar {
     position: absolute;
     bottom: 0; left: 0;
@@ -166,7 +166,7 @@
     opacity: 0.2;
   }
   .card:hover .card-bar { width: 100%; }
- 
+
   .footer {
     margin-top: 46px;
     font-size: 8px;
@@ -177,20 +177,20 @@
 </style>
 </head>
 <body>
- 
+
 <canvas id="bg"></canvas>
- 
+
 <div class="float-char" style="font-size:300px;top:2%;left:-5%;animation-duration:20s;">龙</div>
 <div class="float-char" style="font-size:200px;bottom:6%;right:-2%;animation-duration:24s;animation-delay:-10s;">鸟</div>
 <div class="float-char" style="font-size:130px;top:38%;right:7%;animation-duration:16s;animation-delay:-5s;">安</div>
- 
+
 <div class="container">
   <div class="label">网络安全服务 · Poster Series</div>
   <div class="title">上网，我们帮助</div>
   <div class="subtitle">Select a version</div>
- 
+
   <div class="cards">
- 
+
     <!-- LIGHT — bagua / sun graphic -->
     <a class="card light" href="poster_light.html">
       <div class="card-accent"></div>
@@ -203,7 +203,7 @@
           <!-- inner circle -->
           <circle cx="60" cy="60" r="16" stroke="#111" stroke-width="1.2" fill="rgba(255,199,25,0.1)"/>
           <circle cx="60" cy="60" r="4" fill="#FFC719" opacity="0.9"/>
- 
+
           <!-- 8 spokes — bagua inspired -->
           <line x1="60" y1="10" x2="60" y2="24" stroke="#111" stroke-width="1.4"/>
           <line x1="60" y1="96" x2="60" y2="110" stroke="#111" stroke-width="1.4"/>
@@ -213,7 +213,7 @@
           <line x1="85" y1="85" x2="95" y2="95" stroke="#111" stroke-width="1.4"/>
           <line x1="95" y1="25" x2="85" y2="35" stroke="#111" stroke-width="1.4"/>
           <line x1="25" y1="95" x2="35" y2="85" stroke="#111" stroke-width="1.4"/>
- 
+
           <!-- trigram dashes at 8 positions (bagua style) -->
           <!-- N -->
           <line x1="52" y1="13" x2="56" y2="13" stroke="#111" stroke-width="1.5"/>
@@ -236,7 +236,7 @@
       <div class="card-label">明亮版本</div>
       <div class="card-bar"></div>
     </a>
- 
+
     <!-- DARK — geometric diamond / seal graphic -->
     <a class="card dark" href="poster_dark.html">
       <div class="card-accent"></div>
@@ -276,18 +276,18 @@
       <div class="card-label">暗色版本</div>
       <div class="card-bar"></div>
     </a>
- 
+
   </div>
- 
+
   <div class="footer">© 2026 · 网络安全 · voor MKB</div>
 </div>
- 
+
 <script>
   const canvas = document.getElementById('bg');
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
- 
+
   const nodes = Array.from({length: 22}, () => ({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
@@ -295,7 +295,7 @@
     vy: (Math.random() - 0.5) * 0.22,
     r: Math.random() * 1.4 + 0.7
   }));
- 
+
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < nodes.length; i++) {
@@ -327,4 +327,3 @@
 </script>
 </body>
 </html>
- 
