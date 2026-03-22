@@ -10,9 +10,9 @@ Confucianistische integriteit betekent betrouwbaar handelen, ongeacht de situati
 
 Collectivisme leert dat de groep belangrijker is dan het individu. Eén onbeveiligd apparaat raakt iedereen. Veiligheid meer een gedeelde verantwoordelijkheid dan een persoonlijke keuze.
 
-Een netwerk is nooit een verzameling losse onderdelen. Het is een web van verbindingen, afhankelijkheden, kwetsbaarheden. Eén zwak punt raakt het geheel. Bescherming is een begrip van het systeem als geheel.
+Een netwerk is een web van verbindingen, afhankelijkheden, kwetsbaarheden. Eén zwak punt raakt het geheel. Bescherming is een begrip van het systeem als geheel.
 
-Dat idee zit in elk onderdeel van dit project: de bewegende nodes op de achtergrond die verbindingen trekken, de dreigingsmeter die voortdurend fluctueert, de scan die nooit stopt. Niet omdat het er cool uitziet, maar omdat het klopt.
+Dat idee zit in elk onderdeel van dit project: de bewegende nodes op de achtergrond die verbindingen trekken, de dreigingsmeter die voortdurend fluctueert, de scan die nooit stopt.
 
 上网，我们帮助 — terwijl jij online bent, denken wij mee, voor uw cyberveiligheid.
 
